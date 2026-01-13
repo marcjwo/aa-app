@@ -1,81 +1,19 @@
 @use '@angular/material' as mat;
 
-$google-blue: (
-  50: #e8f0fe,
-  100: #d2e3fc,
-  200: #a7c7fa,
-  300: #8ab4f8,
-  400: #669df6,
-  500: #4285f4,
-  600: #1a73e8,
-  700: #1967d2,
-  800: #185abc,
-  900: #174ea6,
-  A100: #d2e3fc,
-  A200: #4285f4,
-  A400: #1967d2,
-  A700: #174ea6,
-  contrast: (50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: rgba(black, 0.87),
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
-    A100: rgba(black, 0.87),
-    A200: white,
-    A400: white,
-    A700: white,
+// Define the theme using Material 3 APIs with standard palettes
+// Angular Material will generate M3 tonal palettes from these M2 seeds
+$theme: mat.define-theme((color: (theme-type: light,
+        primary: mat.$blue-palette,
+        tertiary: mat.$red-palette,
+      ),
+      typography: (plain-family: 'Roboto, "Helvetica Neue", sans-serif',
+        brand-family: '"Google Sans", "Product Sans", Roboto, sans-serif',
+      ),
+      density: (scale: 0
   )
-);
+));
 
-$google-red: (
-  50: #ffebee,
-  100: #ffcdd2,
-  200: #ef9a9a,
-  300: #e57373,
-  400: #ef5350,
-  500: #f44336,
-  600: #e53935,
-  700: #d32f2f,
-  800: #c62828,
-  900: #b71c1c,
-  A100: #ff8a80,
-  A200: #ff5252,
-  A400: #ff1744,
-  A700: #d50000,
-  contrast: (50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: rgba(black, 0.87),
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
-    A100: rgba(black, 0.87),
-    A200: white,
-    A400: white,
-    A700: white,
-  )
-);
-
-$google-primary: mat.m2-define-palette($google-blue, 600);
-$google-accent: mat.m2-define-palette($google-red, A200, A100, A400);
-
-$theme-primary: $google-primary;
-$theme-accent: $google-accent;
-$theme-warn: mat.m2-define-palette($google-red);
-
-$theme: mat.m2-define-light-theme((color: (primary: $theme-primary,
-        accent: $theme-accent,
-        warn: $theme-warn,
-      )));
-
+// Emit theme styles
 @include mat.core();
 @include mat.all-component-themes($theme);
 
@@ -94,6 +32,7 @@ body {
   flex: 1 1 auto;
 }
 
+// Custom utilitarian classes for the logo
 .google-logo {
   font-family: 'Product Sans', 'Roboto', sans-serif;
   font-weight: 500;
@@ -101,21 +40,25 @@ body {
   color: #5f6368;
   display: flex;
   align-items: center;
-  gap: 8px;
-
+  gap: 2px;
   .blue {
-    color: #4285f4;
-  }
-
-  .red {
-    color: #ea4335;
-  }
-
-  .yellow {
-    color: #fbbc04;
-  }
-
-  .green {
-    color: #34a853;
+      color: #4285f4;
+    }
+  
+    .red {
+      color: #ea4335;
+    }
+  
+    .yellow {
+      color: #fbbc04;
+    }
+  
+    .green {
+      color: #34a853;
+    }
+    .app-name {
+      margin-left: 8px;
+      color: #5f6368;
+      font-family: 'Google Sans', sans-serif;
   }
 }

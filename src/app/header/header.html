@@ -7,7 +7,7 @@
       <span class="blue">g</span>
       <span class="green">l</span>
       <span class="red">e</span>
-      <span class="app-name">Accelerate Analytics</span>
+      <span class="app-name">ADK Agent Analytics</span>
     </span>
   </div>
 
@@ -23,8 +23,12 @@
 
   <span class="spacer"></span>
 
-  <button mat-flat-button color="primary" (click)="toggleSidebar.emit()" class="gemini-button">
-    <mat-icon>sparkles</mat-icon>
-    Ask Gemini
-  </button>
+  <div class="gemini-actions">
+    <!-- Standalone Gemini Logo as requested -->
+    <img src="https://www.gstatic.com/images/branding/productlogos/gemini_2025_round/v1/192px.svg" alt="Gemini Logo"
+      class="gemini-header-logo">
+    <button mat-flat-button color="primary" (click)="toggleSidebar.emit()" class="gemini-button">
+      Ask Gemini
+      </button>
+  </div>
 </mat-toolbar>
