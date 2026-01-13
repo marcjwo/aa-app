@@ -1,0 +1,40 @@
+.header-toolbar {
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 24px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.app-name {
+  color: #5f6368;
+  margin-left: 8px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* Material overrides for cleaner look */
+/* Increase specificity with ::ng-deep if ViewEncapsulation is emulated (default) */
+:host ::ng-deep {
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+    /* Hide hint/error space for compactness */
+  }
+}
+
+.view-selector {
+  margin-top: 16px;
+  /* Balance the vertical alignment manually or fix Flexbox */
+  width: 200px;
+}
+
+.gemini-button {
+  border-radius: 20px;
+  padding: 0 24px;
+}

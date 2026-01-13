@@ -1,0 +1,38 @@
+<div class="embed-container">
+  <div *ngIf="viewMode === 'dashboard'" class="mock-view dashboard">
+    <div class="mock-header">
+      <h2>Sales Overview Dashboard</h2>
+      <div class="mock-filters">
+        <span class="filter">Date Range: Last 30 Days</span>
+        <span class="filter">Region: All</span>
+      </div>
+    </div>
+    <div class="mock-charts-grid">
+      <div class="chart large">Revenue Trend</div>
+      <div class="chart small">Top Products</div>
+      <div class="chart small">Customer Acquisition</div>
+    </div>
+  </div>
+
+  <div *ngIf="viewMode === 'report'" class="mock-view report">
+    <div class="mock-header">
+      <h2>Quarterly Performance Report</h2>
+      <div class="mock-actions">
+        <button>Download PDF</button>
+        <button>Schedule</button>
+      </div>
+    </div>
+    <div class="mock-table">
+      <div class="table-header">
+        <span>Product</span>
+        <span>Revenue</span>
+        <span>Growth</span>
+      </div>
+      <div class="table-row" *ngFor="let i of [1,2,3,4,5]">
+        <span>Product {{i}}</span>
+        <span>$ {{i * 12349}}</span>
+        <span>+{{i * 2}}%</span>
+      </div>
+    </div>
+  </div>
+</div>

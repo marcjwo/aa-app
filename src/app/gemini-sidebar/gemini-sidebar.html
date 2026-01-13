@@ -1,0 +1,35 @@
+<div class="sidebar-container">
+  <div class="sidebar-header">
+    <div class="gemini-branding">
+      <mat-icon class="sparkle-icon">sparkles</mat-icon>
+      <h3>Gemini Assistant</h3>
+    </div>
+  </div>
+
+  <div class="messages-list">
+    <div class="message" *ngFor="let msg of messages" [class.user]="msg.role === 'user'"
+      [class.model]="msg.role === 'model'">
+      <div class="avatar" *ngIf="msg.role === 'model'">
+        <mat-icon>smart_toy</mat-icon>
+      </div>
+      <div class="bubble">
+        {{ msg.text }}
+      </div>
+    </div>
+    <div class="loading-indicator" *ngIf="isLoading">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="input-area">
+    <mat-form-field appearance="outline" class="chat-input">
+      <input matInput [(ngModel)]="userInput" (keyup.enter)="sendMessage()"
+        placeholder="Ask a question about your data..." [disabled]="isLoading">
+      <button mat-icon-button matSuffix (click)="sendMessage()" [disabled]="!userInput.trim() || isLoading">
+        <mat-icon>send</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>

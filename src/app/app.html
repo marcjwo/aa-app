@@ -1,0 +1,16 @@
+<mat-sidenav-container class="app-container" autosize>
+  <mat-sidenav #sidenav mode="side" position="end" [(opened)]="isSidebarOpen" class="app-sidebar">
+    <app-gemini-sidebar></app-gemini-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content-wrapper">
+      <app-header [viewMode]="viewMode" (viewModeChange)="viewMode = $event" (toggleSidebar)="toggleSidebar()">
+      </app-header>
+
+      <main class="main-content">
+        <app-looker-embed [viewMode]="viewMode"></app-looker-embed>
+      </main>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

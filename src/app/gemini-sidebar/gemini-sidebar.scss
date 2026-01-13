@@ -1,0 +1,146 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fcfcfc;
+}
+
+.sidebar-header {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  background: white;
+
+  .gemini-branding {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .sparkle-icon {
+      color: #1a73e8;
+      /* Google Blue */
+      /* Or use a gradient text if possible, but keep simple for now */
+    }
+
+    h3 {
+      margin: 0;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 500;
+      color: #3c4043;
+    }
+  }
+}
+
+.messages-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+  max-width: 85%;
+
+  &.user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+
+    .bubble {
+      background: #e8f0fe;
+      /* Light Blue */
+      color: #1a73e8;
+      border-radius: 16px 16px 0 16px;
+    }
+  }
+
+  &.model {
+    align-self: flex-start;
+
+    .bubble {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 0 16px 16px 16px;
+    }
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e8f0fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a73e8;
+    flex-shrink: 0;
+
+    mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .bubble {
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.input-area {
+  padding: 16px;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+
+  .chat-input {
+    width: 100%;
+
+    ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+  }
+}
+
+.loading-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+  margin-left: 44px;
+  /* Align with bubbles */
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: #ccc;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+
+    &:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
