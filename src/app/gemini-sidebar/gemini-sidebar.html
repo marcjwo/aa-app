@@ -14,7 +14,13 @@
         <mat-icon>smart_toy</mat-icon>
       </div>
       <div class="bubble">
-        {{ msg.text }}
+        <!-- Text Content -->
+        <span *ngIf="!msg.type || msg.type === 'text'">{{ msg.text }}</span>
+        
+        <!-- Chart Content -->
+        <div *ngIf="msg.type === 'chart'" class="chart-container">
+          <app-vega-chart [spec]="msg.content"></app-vega-chart>
+        </div>
       </div>
     </div>
     <div class="loading-indicator" *ngIf="isLoading">
@@ -25,12 +31,22 @@
   </div>
 
   <div class="input-area">
-    <mat-form-field appearance="outline" class="chat-input">
-      <input matInput [(ngModel)]="userInput" (keyup.enter)="sendMessage()"
-        placeholder="Ask a question about your data..." [disabled]="isLoading">
-      <button mat-icon-button matSuffix (click)="sendMessage()" [disabled]="!userInput.trim() || isLoading">
-        <mat-icon>send</mat-icon>
-      </button>
-    </mat-form-field>
+    <ng-container *ngIf="isAuthenticated$ | async; else loginTemplate">
+      <mat-form-field appearance="outline" class="chat-input">
+        <input matInput [(ngModel)]="userInput" (keyup.enter)="sendMessage()" placeholder="Ask a question about your data..."
+          [disabled]="isLoading">
+        <button mat-icon-button matSuffix (click)="sendMessage()" [disabled]="!userInput.trim() || isLoading">
+          <mat-icon>send</mat-icon>
+        </button>
+        </mat-form-field>
+    </ng-container>
+    <ng-template #loginTemplate>
+      <div class="login-container">
+        <p>Sign in to chat with your data</p>
+        <button mat-raised-button color="primary" (click)="login()">
+          Sign in with Google
+        </button>
+      </div>
+    </ng-template>
   </div>
 </div>
