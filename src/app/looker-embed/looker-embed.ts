@@ -13,7 +13,7 @@ export class LookerEmbed implements OnChanges {
   private sanitizer = inject(DomSanitizer);
 
   @Input() viewMode: 'dashboard' | 'report' = 'dashboard';
-  @Input() dashboardUrl: string = 'https://looker.cloud-bi-opm.com/embed/dashboards/349?Agent=%22real_time_agent%22&Date+Range=2025%2F01%2F01+to+2026%2F01%2F14';
+  @Input() dashboardUrl: string = 'https://looker.cloud-bi-opm.com/embed/dashboards/349';
   @Input() reportUrl: string = 'https://lookerstudio.google.com:/embed/reporting/636ea626-6981-4043-b738-5657254666f8/page/8YdhF';
 
   safeDashboardUrl: SafeResourceUrl | undefined;

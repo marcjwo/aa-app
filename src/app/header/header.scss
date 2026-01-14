@@ -28,6 +28,18 @@
 
 .view-selector {
   width: 200px;
+  ::ng-deep {
+  
+      .mdc-text-field--focused .mdc-notched-outline__leading,
+      .mdc-text-field--focused .mdc-notched-outline__notch,
+      .mdc-text-field--focused .mdc-notched-outline__trailing {
+        border-color: #1a73e8 !important;
+      }
+  
+      .mdc-text-field--focused .mdc-floating-label {
+        color: #1a73e8 !important;
+      }
+    }
 }
 
 .gemini-actions {
