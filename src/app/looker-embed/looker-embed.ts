@@ -12,19 +12,13 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class LookerEmbed implements OnChanges {
   private sanitizer = inject(DomSanitizer);
 
-  @Input() viewMode: 'dashboard' | 'report' = 'dashboard';
-  @Input() dashboardUrl: string = 'https://looker.cloud-bi-opm.com/embed/dashboards/349';
-  @Input() reportUrl: string = 'https://lookerstudio.google.com:/embed/reporting/636ea626-6981-4043-b738-5657254666f8/page/8YdhF';
+  @Input() dashboardUrl: string = 'https://looker.cloud-bi-opm.com/embed/dashboards/354?allow_login_screen=true';
 
   safeDashboardUrl: SafeResourceUrl | undefined;
-  safeReportUrl: SafeResourceUrl | undefined;
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['dashboardUrl']) {
       this.safeDashboardUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.dashboardUrl);
-    }
-    if (changes['reportUrl']) {
-      this.safeReportUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.reportUrl);
     }
   }
 
@@ -32,9 +26,6 @@ export class LookerEmbed implements OnChanges {
   ngOnInit() {
     if (!this.safeDashboardUrl && this.dashboardUrl) {
       this.safeDashboardUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.dashboardUrl);
-    }
-    if (!this.safeReportUrl && this.reportUrl) {
-      this.safeReportUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.reportUrl);
     }
   }
 }

@@ -19,7 +19,6 @@ import { GeminiSidebar } from './gemini-sidebar/gemini-sidebar';
   styleUrl: './app.scss'
 })
 export class App {
-  viewMode: 'dashboard' | 'report' = 'dashboard';
   isSidebarOpen = false;
 
   toggleSidebar() {

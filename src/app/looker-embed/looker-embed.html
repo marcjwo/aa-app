@@ -1,6 +1,7 @@
 <div class="embed-container">
   <!-- Use [hidden] to keep iframes in DOM to prevent reloading -->
-  <div class="view-wrapper" [hidden]="viewMode !== 'dashboard'">
+  <!-- Use [hidden] to keep iframes in DOM to prevent reloading -->
+  <div class="view-wrapper">
     <iframe *ngIf="dashboardUrl; else noDashboardUrl" [src]="safeDashboardUrl" class="looker-iframe" allowfullscreen
       sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
     </iframe>
@@ -8,18 +9,6 @@
       <div class="placeholder-message">
         <p>No Dashboard URL provided.</p>
         <p>Please configure the <code>dashboardUrl</code> input.</p>
-      </div>
-    </ng-template>
-  </div>
-
-  <div class="view-wrapper" [hidden]="viewMode !== 'report'">
-    <iframe *ngIf="reportUrl; else noReportUrl" [src]="safeReportUrl" class="looker-iframe" allowfullscreen
-      sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
-    </iframe>
-    <ng-template #noReportUrl>
-      <div class="placeholder-message">
-        <p>No Report URL provided.</p>
-        <p>Please configure the <code>reportUrl</code> input.</p>
       </div>
     </ng-template>
   </div>

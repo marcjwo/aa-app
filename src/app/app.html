@@ -5,11 +5,11 @@
 
   <mat-sidenav-content>
     <div class="content-wrapper">
-      <app-header [viewMode]="viewMode" (viewModeChange)="viewMode = $event" (toggleSidebar)="toggleSidebar()">
+      <app-header (toggleSidebar)="toggleSidebar()">
       </app-header>
 
       <main class="main-content">
-        <app-looker-embed [viewMode]="viewMode"></app-looker-embed>
+        <app-looker-embed></app-looker-embed>
       </main>
     </div>
   </mat-sidenav-content>
