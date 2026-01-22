@@ -12,7 +12,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class LookerEmbed implements OnChanges {
   private sanitizer = inject(DomSanitizer);
 
-  @Input() dashboardUrl: string = 'https://looker.cloud-bi-opm.com/embed/dashboards/354?allow_login_screen=true';
+  @Input() dashboardUrl: string = 'https://looker.cloud-bi-opm.com/embed/dashboards/358?allow_login_screen=true';
 
   safeDashboardUrl: SafeResourceUrl | undefined;
 
