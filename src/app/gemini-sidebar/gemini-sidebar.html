@@ -28,10 +28,17 @@
       <div class="dot"></div>
       <div class="dot"></div>
     </div>
+<!-- Suggested Questions in Layout -->
+<div class="suggested-questions" *ngIf="(isAuthenticated$ | async) && !isLoading && messages.length <= 1">
+  <button class="suggestion-chip" *ngFor="let question of suggestedQuestions" (click)="sendSuggestedQuestion(question)">
+    {{ question }}
+  </button>
+</div>
   </div>
 
   <div class="input-area">
     <ng-container *ngIf="isAuthenticated$ | async; else loginTemplate">
+      <!-- Suggested Questions removed from here -->
       <mat-form-field appearance="outline" class="chat-input">
         <input matInput [(ngModel)]="userInput" (keyup.enter)="sendMessage()" placeholder="Ask a question about your data..."
           [disabled]="isLoading">

@@ -45,8 +45,15 @@ export class GeminiSidebar {
   // Use Observable for auth state to ensure UI updates immediately
   isAuthenticated$ = this.authService.accessToken$;
 
+  suggestedQuestions = ['What is the total token usage for each tool?', 'What is the average latency for each tool?'];
+
   login() {
     this.authService.login();
+  }
+
+  sendSuggestedQuestion(question: string) {
+    this.userInput = question;
+    this.sendMessage();
   }
 
   sendMessage() {

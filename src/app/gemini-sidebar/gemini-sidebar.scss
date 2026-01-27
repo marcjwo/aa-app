@@ -3,6 +3,15 @@
   flex-direction: column;
   height: 100%;
   background: #fcfcfc;
+  font-family: 'Google Sans', sans-serif;
+    /* Enforce font globally in sidebar */
+  
+    /* Ensure inputs and buttons also use it */
+    input,
+    button,
+    textarea {
+      font-family: 'Google Sans', sans-serif;
+    }
 }
 
 .sidebar-header {
@@ -38,6 +47,39 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+.suggested-questions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Align to right like user messages */
+    gap: 8px;
+    padding-bottom: 8px;
+    margin-top: auto;
+    /* Push to bottom if needed */
+
+    .suggestion-chip {
+      background-color: #e8f0fe;
+      /* Light Blue */
+      color: #1a73e8;
+      /* Blue Text */
+      border: none;
+      border-radius: 16px 16px 0 16px;
+      /* User bubble shape */
+      padding: 10px 16px;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      text-align: right;
+      max-width: 85%;
+
+      &:hover:not(:disabled) {
+        background-color: #d2e3fc;
+        /* Slightly darker on hover */
+      }
+    }
+  }
 }
 
 .message {
@@ -90,36 +132,37 @@
     font-size: 14px;
     line-height: 1.5;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-pre {
-    background: #f1f3f4;
-    padding: 8px;
-    border-radius: 4px;
-    overflow-x: auto;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 12px;
-    margin: 8px 0 0 0;
-    max-width: 100%;
-    white-space: pre-wrap;
-    /* Wrap text if needed */
-    word-break: break-all;
-  }
 
-  details {
-    margin-top: 8px;
-    cursor: pointer;
+    pre {
+        background: #f1f3f4;
+        padding: 8px;
+        border-radius: 4px;
+        overflow-x: auto;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 12px;
+        margin: 8px 0 0 0;
+        max-width: 100%;
+        white-space: pre-wrap;
+        /* Wrap text if needed */
+        word-break: break-all;
+      }
 
-    summary {
-      font-weight: 500;
-      color: #1a73e8;
-      outline: none;
-    }
-  }
+                details {
+                  margin-top: 8px;
+                  cursor: pointer;
 
-  .chart-container {
-    margin-top: 8px;
-    border-top: 1px solid #e0e0e0;
-    padding-top: 8px;
-  }
+      summary {
+          font-weight: 500;
+          color: #1a73e8;
+          outline: none;
+        }
+      }
+
+                .chart-container {
+                  margin-top: 8px;
+                  border-top: 1px solid #e0e0e0;
+                  padding-top: 8px;
+                }
   }
 }
 
@@ -128,11 +171,12 @@ pre {
   background: white;
   border-top: 1px solid #e0e0e0;
 
+
   .chat-input {
     width: 100%;
 
     // Override Material form field focus color to Google Blue
-      ::ng-deep {
+    ::ng-deep {
     
         .mdc-text-field--focused .mdc-notched-outline__leading,
         .mdc-text-field--focused .mdc-notched-outline__notch,
@@ -158,12 +202,11 @@ pre {
           gap: 12px;
           padding: 8px;
     
-          p {
-            margin: 0;
-            color: #5f6368;
-            font-size: 14px;
-          }
-    
+      p {
+          margin: 0;
+          color: #5f6368;
+          font-size: 14px;
+        }
 
         }
 }
@@ -205,10 +248,12 @@ pre {
   }
 }
 .gsi-material-button {
+  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -webkit-appearance: none;
+  appearance: none;
   background-color: WHITE;
   background-image: none;
   border: 1px solid #747775;

@@ -20,3 +20,29 @@
   overflow: hidden;
   /* Scroll handled by component */
 }
+.floating-actions {
+  display: flex;
+  justify-content: flex-end;
+  /* Align to right */
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  z-index: 1000;
+}
+
+.gemini-floating-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.gemini-button {
+  border-radius: 20px;
+  padding: 0 24px;
+  background-color: #1a73e8 !important;
+  color: white !important;
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

@@ -5,8 +5,14 @@
 
   <mat-sidenav-content>
     <div class="content-wrapper">
-      <app-header (toggleSidebar)="toggleSidebar()">
-      </app-header>
+      <div class="floating-actions">
+        <!-- Standalone Gemini Logo -->
+        <img src="https://www.gstatic.com/images/branding/productlogos/gemini_2025_round/v1/192px.svg" alt="Gemini Logo"
+          class="gemini-floating-logo">
+        <button mat-flat-button color="primary" (click)="toggleSidebar()" class="gemini-button">
+          Ask Gemini
+        </button>
+      </div>
 
       <main class="main-content">
         <app-looker-embed></app-looker-embed>
