@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { VegaChartComponent } from './vega-chart.component';
 import { ConversationalAnalyticsService } from '../services/conversational-analytics.service';
 import { AuthService } from '../services/auth.service';
+import { MarkdownModule } from 'ngx-markdown';
 
 interface Message {
   role: 'user' | 'model';
@@ -26,7 +27,8 @@ interface Message {
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    VegaChartComponent
+    VegaChartComponent,
+    MarkdownModule
   ],
   templateUrl: './gemini-sidebar.html',
   styleUrl: './gemini-sidebar.scss'

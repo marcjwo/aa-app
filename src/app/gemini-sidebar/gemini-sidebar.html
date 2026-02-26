@@ -15,7 +15,7 @@
       </div>
       <div class="bubble">
         <!-- Text Content -->
-        <span *ngIf="!msg.type || msg.type === 'text'">{{ msg.text }}</span>
+        <markdown *ngIf="!msg.type || msg.type === 'text'" [data]="msg.text"></markdown>
         
         <!-- Chart Content -->
         <div *ngIf="msg.type === 'chart'" class="chart-container">
