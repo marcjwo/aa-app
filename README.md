@@ -17,6 +17,26 @@ This project uses environment variables for configuration. These are not committ
     -   `lookerClientId`: Your Looker Client ID
     -   `lookerClientSecret`: Your Looker Client Secret
 
+## Google Cloud Setup
+
+To deploy or interact with Google Cloud services, you need to be authenticated and have the correct project selected.
+
+1.  Login to Google Cloud:
+    ```bash
+    gcloud auth login
+    ```
+
+2.  Set the active project:
+    ```bash
+    gcloud config set project YOUR_PROJECT_ID
+    ```
+    *(Replace `YOUR_PROJECT_ID` with your actual Google Cloud Project ID)*
+
+3.  (Optional) If you need Application Default Credentials for local development:
+    ```bash
+    gcloud auth application-default login
+    ```
+
 ## Development server
 
 To start a local development server, run:
