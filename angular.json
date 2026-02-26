@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "accelerate-analytics-agent": {
+    "analytics-agent": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,12 +61,13 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "accelerate-analytics-agent:build:production"
+              "buildTarget": "analytics-agent:build:production"
             },
             "development": {
-              "buildTarget": "accelerate-analytics-agent:build:development"
+              "buildTarget": "analytics-agent:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         }
       }
     }

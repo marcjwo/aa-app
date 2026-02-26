@@ -1,4 +1,4 @@
-# AccelerateAnalyticsAgent
+# AnalyticsAgent
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
 
@@ -79,4 +79,4 @@ For more information on using the Angular CLI, including detailed command refere
 
 ## Deployment to Cloud Run
 
-`gcloud run deploy accelerate-analytics-agent --source .`
+`gcloud run deploy analytics-agent --source .`
