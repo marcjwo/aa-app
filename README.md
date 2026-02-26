@@ -2,6 +2,21 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
 
+## Environment Setup
+
+This project uses environment variables for configuration. These are not committed to the repository for security reasons.
+
+1.  Copy the example environment file:
+    ```bash
+    cp src/environments/environment.example.ts src/environments/environment.ts
+    ```
+
+2.  Open `src/environments/environment.ts` and replace the placeholder values with your actual configuration:
+    -   `projectId`: Your Google Cloud Project ID
+    -   `googleClientId`: Your OAuth 2.0 Web Client ID
+    -   `lookerClientId`: Your Looker Client ID
+    -   `lookerClientSecret`: Your Looker Client Secret
+
 ## Development server
 
 To start a local development server, run:
