@@ -66,11 +66,7 @@
             "development": {
               "buildTarget": "accelerate-analytics-agent:build:development"
             }
-          },
-          "defaultConfiguration": "development"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test"
+          }
         }
       }
     }
